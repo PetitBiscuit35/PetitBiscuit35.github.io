@@ -155,17 +155,41 @@ header .navbar ul li a:hover {
 }
 
 .Presentation h1 span {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.Presentation h1 span::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
   color: var(--yellow);
+  -webkit-text-stroke: 0vw #fff4;
+  border-right: 2px solid var(--yellow);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
 }
 
 .Presentation p {
   font-size: 2rem;
   color: #eee;
   padding: 1rem 0;
-}
-
-.Presentation span {
-  font-weight: bold;
 }
 
 .Formation .box-container {
